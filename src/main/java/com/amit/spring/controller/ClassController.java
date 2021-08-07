@@ -69,4 +69,11 @@ public class ClassController {
        this.classRepository.delete(classDel);
        return new BaseResponse<>(204,"Delete Success");
     }
+    @GetMapping(value = "bad")
+    public BaseResponse<Class> getAllClassBad() {
+        BaseResponse<Class> response = new BaseResponse<>();
+        response.setData(this.classRepository.findClassBad());
+        return response;
+    }
+
 }
