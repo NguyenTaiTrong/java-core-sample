@@ -2,6 +2,7 @@ package com.amit.spring.controller;
 
 import com.amit.spring.model.Class;
 import com.amit.spring.model.request.AddClassRequest;
+import com.amit.spring.model.request.UpdateClassRequest;
 import com.amit.spring.model.response.BaseResponse;
 import com.amit.spring.model.utils.ApiException;
 import com.amit.spring.model.utils.ERROR;
@@ -46,5 +47,24 @@ public class ClassController {
         newClass.setName(request.getName());
         this.classRepository.save(newClass);
         return new BaseResponse<>();
+    }
+
+    @PutMapping(value = "{id}")
+    public BaseResponse<String> updatedClass(@PathVariable long id,@RequestBody UpdateClassRequest request) throws ApiException
+    {
+        Class newClass = new Class();
+        newClass = this.classRepository.getById(id);
+        newClass.setName(request.getNameUpdate());
+        this.classRepository.save(newClass);
+        return new BaseResponse<>();
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public BaseResponse<String> deleteClass(@PathVariable long id) throws  ApiException
+    {
+       Class classDel = new Class();
+       classDel =  this.classRepository.getById(id);
+       this.classRepository.delete(classDel);
+       return new BaseResponse<>(204,"Delete Success");
     }
 }
