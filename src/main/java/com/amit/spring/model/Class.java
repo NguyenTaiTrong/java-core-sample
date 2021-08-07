@@ -13,7 +13,7 @@ public class Class {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
     private Collection<Student> students;
 
     public Class(long id, String name, Collection<Student> students) {

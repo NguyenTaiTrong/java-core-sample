@@ -1,7 +1,9 @@
 package com.amit.spring.controller;
 
 import com.amit.spring.model.Class;
+import com.amit.spring.model.Student;
 import com.amit.spring.model.request.AddClassRequest;
+import com.amit.spring.model.request.AddStudentRequest;
 import com.amit.spring.model.request.UpdateClassRequest;
 import com.amit.spring.model.response.BaseResponse;
 import com.amit.spring.model.utils.ApiException;
