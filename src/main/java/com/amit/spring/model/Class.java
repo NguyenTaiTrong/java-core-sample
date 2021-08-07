@@ -3,25 +3,58 @@ package com.amit.spring.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
+import javax.persistence.*;
+import java.util.Collection;
 import java.util.Set;
 
-@Data
+@Entity
 public class Class {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String name;
-    @JsonIgnore
-    private Set<Student> students;
+    @OneToMany
+    private Collection<Student> students;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Class aClass = (Class) o;
-        return id == aClass.id ;
+    public Class(long id, String name, Collection<Student> students) {
+        this.id = id;
+        this.name = name;
+        this.students = students;
+    }
+
+    public Class() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Collection<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Collection<Student> students) {
+        this.students = students;
     }
 
     @Override
-    public int hashCode() {
-        return id;
+    public String toString() {
+        return "Class{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", students=" + students +
+                '}';
     }
 }

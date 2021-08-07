@@ -993,3 +993,201 @@ Action:
 
 Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
 
+2021-08-07T11:22:49.700+0700   ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - []- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field classRepository in com.amit.spring.controller.ClassController required a bean of type 'com.amit.spring.repository.ClassRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.amit.spring.repository.ClassRepository' in your configuration.
+
+2021-08-07T11:24:16.113+0700   ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - []- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field classRepository in com.amit.spring.controller.ClassController required a bean of type 'com.amit.spring.repository.ClassRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.amit.spring.repository.ClassRepository' in your configuration.
+
+2021-08-07T11:26:30.361+0700   ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - []- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field classRepository in com.amit.spring.controller.ClassController required a bean of type 'com.amit.spring.repository.ClassRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.amit.spring.repository.ClassRepository' in your configuration.
+
+2021-08-07T11:27:10.759+0700   ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - []- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field classRepository in com.amit.spring.controller.ClassController required a bean of type 'com.amit.spring.repository.ClassRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.amit.spring.repository.ClassRepository' in your configuration.
+
+2021-08-07T11:28:23.455+0700   ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - []- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field classRepository in com.amit.spring.controller.ClassController required a bean of type 'com.amit.spring.repository.ClassRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.amit.spring.repository.ClassRepository' in your configuration.
+
+2021-08-07T11:29:15.942+0700   ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - []- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field classRepository in com.amit.spring.controller.ClassController required a bean of type 'com.amit.spring.repository.ClassRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.amit.spring.repository.ClassRepository' in your configuration.
+
+2021-08-07T11:29:57.303+0700   ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - []- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field classRepository in com.amit.spring.controller.ClassController required a bean of type 'com.amit.spring.repository.ClassRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.amit.spring.repository.ClassRepository' in your configuration.
+
+2021-08-07T11:30:40.908+0700   ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - []- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field classRepository in com.amit.spring.controller.ClassController required a bean of type 'com.amit.spring.repository.ClassRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.amit.spring.repository.ClassRepository' in your configuration.
+
+2021-08-07T11:31:29.625+0700   ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - []- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field classRepository in com.amit.spring.controller.ClassController required a bean of type 'com.amit.spring.repository.ClassRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.amit.spring.repository.ClassRepository' in your configuration.
+
+2021-08-07T11:33:03.846+0700   ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - []- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field classRepository in com.amit.spring.controller.ClassController required a bean of type 'com.amit.spring.repository.ClassRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.amit.spring.repository.ClassRepository' in your configuration.
+
+2021-08-07T11:33:12.288+0700   ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - []- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field classRepository in com.amit.spring.controller.ClassController required a bean of type 'com.amit.spring.repository.ClassRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.amit.spring.repository.ClassRepository' in your configuration.
+
