@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ClassRepository extends JpaRepository<Class,Long> {
+public interface ClassRepository extends JpaRepository<Class,Long>,ClassCustomRepository {
     @Query("SELECT c FROM Class c WHERE c.name LIKE %:name%")
     List<Class> searchByClassLike(@Param("name") String name);
 }
