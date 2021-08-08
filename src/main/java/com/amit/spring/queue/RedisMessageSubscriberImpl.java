@@ -1,9 +1,8 @@
-package com.amit.spring;
+package com.amit.spring.queue;
 
 import org.springframework.data.redis.connection.Message;
 import org.springframework.data.redis.connection.MessageListener;
 import org.springframework.stereotype.Service;
-
 @Service
 public class RedisMessageSubscriberImpl implements MessageListener {
     @Override
