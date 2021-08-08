@@ -10,6 +10,7 @@ import com.amit.spring.model.utils.ApiException;
 import com.amit.spring.model.utils.ERROR;
 import com.amit.spring.repository.ClassRepository;
 import com.amit.spring.repository.StudentRepository;
+import com.amit.spring.service.StudentService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,57 +23,33 @@ import java.util.List;
 @RequestMapping("/v1/student")
 public class StudentController {
     @Autowired
-    private StudentRepository studentRepository;
-    @Autowired
-    private ClassRepository classRepository;
-    private static final Logger LOGGER = LogManager.getLogger(StudentController.class);
+    private StudentService studentService;
 
     @GetMapping
-    public BaseResponse<List<Student>> getAllStudent() throws ApiException {
-        BaseResponse<List<Student>> response = new BaseResponse<>();
-        response.setData(this.studentRepository.findAll());
-        return response;
+    public BaseResponse<List<Student>> getAllStudent()  {
+        return this.studentService.getAllStudent();
     }
 
     @GetMapping(value = "/{id}")
-    public BaseResponse<Student> getDetailStudent(@PathVariable long id) throws ApiException{
-        BaseResponse<Student> response = new BaseResponse<>();
-        response.setData(this.studentRepository.getById(id));
-        return  response;
+    public BaseResponse<Student> getDetailStudent(@PathVariable long id) {
+        return this.studentService.getDetailStudent(id);
     }
 
     @PostMapping
-    public BaseResponse<String> createdStudent(@RequestBody AddStudentRequest request) throws ApiException
+    public BaseResponse<String> createdStudent(@RequestBody AddStudentRequest request)
     {
-        if (StringUtils.isEmpty(request.getName())){
-            LOGGER.debug("StudentName empty" );
-            throw new ApiException(ERROR.INVALID_PARAM , "Tên của lớp không được để trống");
-        }
-        Class aClass = this.classRepository.getById(request.getClassId());
-        Student newStudent = new Student();
-        newStudent.setName(request.getName());
-        newStudent.setaClass(aClass);
-
-        this.studentRepository.save(newStudent);
-        return new BaseResponse<>(201,"Add student successfully");
+        return this.studentService.createdStudent(request);
     }
 
     @PutMapping(value = "{id}")
     public BaseResponse<String> updatedClass(@PathVariable long id,@RequestBody UpdateClassRequest request) throws ApiException
     {
-        Student newStudent = new Student();
-        newStudent = this.studentRepository.getById(id);
-        newStudent.setName(request.getNameUpdate());
-        this.studentRepository.save(newStudent);
-        return new BaseResponse<>();
+        return this.studentService.updatedClass(id,request);
     }
 
     @DeleteMapping(value = "/{id}")
     public BaseResponse<String> deleteClass(@PathVariable long id) throws  ApiException
     {
-        Student studentDel = new Student();
-        studentDel =  this.studentRepository.getById(id);
-        this.studentRepository.delete(studentDel);
-        return new BaseResponse<>(204,"Delete Success");
+        return this.studentService.deleteClass(id);
     }
 }

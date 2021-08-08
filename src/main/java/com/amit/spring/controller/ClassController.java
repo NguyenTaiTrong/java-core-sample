@@ -9,6 +9,7 @@ import com.amit.spring.model.response.BaseResponse;
 import com.amit.spring.model.utils.ApiException;
 import com.amit.spring.model.utils.ERROR;
 import com.amit.spring.repository.ClassRepository;
+import com.amit.spring.service.ClassService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,59 +22,38 @@ import java.util.List;
 @RequestMapping("/v1/class")
 public class ClassController {
     @Autowired
-    private ClassRepository classRepository;
-    private static final Logger LOGGER = LogManager.getLogger(ClassController.class);
+    private ClassService classService;
 
     @GetMapping
     public BaseResponse<List<Class>> getAllClass() throws ApiException {
-        BaseResponse<List<Class>> response = new BaseResponse<>();
-        response.setData(this.classRepository.findAll());
-        return response;
+        return this.classService.getAllClass();
     }
 
     @GetMapping(value = "/{id}")
     public BaseResponse<Class> getDetailClass(@PathVariable long id) throws ApiException{
-        BaseResponse<Class> response = new BaseResponse<>();
-        response.setData(this.classRepository.getById(id));
-        return  response;
+        return this.classService.getClassById(id);
     }
 
     @PostMapping
     public BaseResponse<String> createdClass(@RequestBody AddClassRequest request) throws ApiException
     {
-        if (StringUtils.isEmpty(request.getName())){
-            LOGGER.debug("Classname empty" );
-            throw new ApiException(ERROR.INVALID_PARAM , "Tên của lớp không được để trống");
-        }
-        Class newClass = new Class();
-        newClass.setName(request.getName());
-        this.classRepository.save(newClass);
-        return new BaseResponse<>();
+        return this.classService.createdClass(request);
     }
 
     @PutMapping(value = "{id}")
     public BaseResponse<String> updatedClass(@PathVariable long id,@RequestBody UpdateClassRequest request) throws ApiException
     {
-        Class newClass = new Class();
-        newClass = this.classRepository.getById(id);
-        newClass.setName(request.getNameUpdate());
-        this.classRepository.save(newClass);
-        return new BaseResponse<>();
+        return  this.classService.updatedClass(id,request);
     }
 
     @DeleteMapping(value = "/{id}")
     public BaseResponse<String> deleteClass(@PathVariable long id) throws  ApiException
     {
-       Class classDel = new Class();
-       classDel =  this.classRepository.getById(id);
-       this.classRepository.delete(classDel);
-       return new BaseResponse<>(204,"Delete Success");
+       return this.classService.deleteClass(id);
     }
-    @GetMapping(value = "bad")
-    public BaseResponse<Class> getAllClassBad() {
-        BaseResponse<Class> response = new BaseResponse<>();
-        response.setData(this.classRepository.findClassBad());
-        return response;
+    @GetMapping(value = "filter")
+    public BaseResponse<List<Class>> filterClass(@RequestParam(value = "name") String name) {
+        return this.classService.getClassByName(name);
     }
 
 }
